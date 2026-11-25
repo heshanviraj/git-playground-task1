@@ -32,3 +32,5 @@ I wrapped the `readFileSync` in `lib/store.js` with a file-exists check, and add
 3. **Line endings.** Git warns that `notes.md` will be converted from LF to CRLF. This is cosmetic.
 
 **Did the prediction match?** Yes. The prediction names both code changes, and this summary found no other edits.
+
+**Did it catch the stray change?** Yes. The summary flagged the edit to `scripts/check.js`, the second file, as possibly unintended because it changes the lesson's grading script.
