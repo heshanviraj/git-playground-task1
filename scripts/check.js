@@ -12,9 +12,15 @@ if (!fs.existsSync(file)) {
   process.exit(1);
 }
 
-if (fs.readFileSync(file, "utf8").trim().length === 0) {
+const content = fs.readFileSync(file, "utf8");
+
+if (content.trim().length === 0) {
   console.error("FAIL  notes.md is empty. Add your prediction and Claude's summary, then push again.");
   process.exit(1);
 }
 
 console.log("PASS  notes.md is present and has content.");
+
+if (process.argv.includes("--print")) {
+  console.log("\n----- notes.md -----\n" + content);
+}
