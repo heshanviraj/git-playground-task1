@@ -1,7 +1,5 @@
 # Notes
 
-**Prediction:** I wrapped the `readFileSync` in `lib/store.js` with a file-exists check, and added an `if` to `scripts/check.js` that prints `notes.md`.
-
 ## What changed
 
 **`lib/store.js` — `load()`**
@@ -14,6 +12,10 @@
 `scripts/check.js` didn't need the guard, because its `readFileSync` call already comes after an `existsSync` check. It was changed later to add a `--print` option (see the summary below).
 
 **Verified:** with no `notes.json` present, `require('./lib/store.js').all()` returns `[]`.
+
+## Prediction (from memory)
+
+I wrapped the `readFileSync` in `lib/store.js` with a file-exists check, and added an `if` to `scripts/check.js` that prints `notes.md`.
 
 ## Claude's summary of changes (`read-repo` vs `main`)
 
